@@ -485,7 +485,7 @@ public class JMHSample_35_Profilers {
             Note how this time the CPI is awfully high: 17 cycles per instruction! Indeed, we are making almost the
             same ~30 instructions, but now they take >530 cycles. Other counters highlight why: we now have cache
             misses on both loads and stores, on all levels of cache hierarchy. With a simple constant-footprint
-            like ours, that's an indication of sharing problems. Indeed, our AtomicLong is heavily-contended
+            like ours, that's an indication of sharing problems. Indeed, our AtomicLongBackport is heavily-contended
             with 8 threads.
 
             "perfnorm", again, can (and should!) be used with multiple forks, to properly estimate the metrics.
@@ -522,11 +522,11 @@ public class JMHSample_35_Profilers {
                                     0x00007f1824f87c4e: mov    $0x1,%edx
                                     0x00007f1824f87c53: lock xadd %rdx,0x10(%r12,%r11,8)
                                                                                   ;*invokevirtual getAndAddLong
-                                                                                  ; - java.util.concurrent.atomic.AtomicLong::incrementAndGet@8 (line 200)
+                                                                                  ; - java.util.concurrent.atomic.AtomicLongBackport::incrementAndGet@8 (line 200)
                                                                                   ; - org.openjdk.jmh.samples.JMHSample_35_Profilers$Atomic::test@4 (line 280)
                                                                                   ; - org.openjdk.jmh.samples.generated.JMHSample_35_Profilers_Atomic_test::test_avgt_jmhStub@16 (line 199)
                  95.20%   95.06%    0x00007f1824f87c5a: add    $0x1,%rdx          ;*ladd
-                                                                                  ; - java.util.concurrent.atomic.AtomicLong::incrementAndGet@12 (line 200)
+                                                                                  ; - java.util.concurrent.atomic.AtomicLongBackport::incrementAndGet@12 (line 200)
                                                                                   ; - org.openjdk.jmh.samples.JMHSample_35_Profilers$Atomic::test@4 (line 280)
                                                                                   ; - org.openjdk.jmh.samples.generated.JMHSample_35_Profilers_Atomic_test::test_avgt_jmhStub@16 (line 199)
                   0.24%    0.00%    0x00007f1824f87c5e: mov    0x10(%rsp),%rsi
