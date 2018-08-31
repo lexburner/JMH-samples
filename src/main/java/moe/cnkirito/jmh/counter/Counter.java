@@ -1,4 +1,4 @@
-package moe.cnkirito.jmh;
+package moe.cnkirito.jmh.counter;
 
 public interface Counter {
     void inc();

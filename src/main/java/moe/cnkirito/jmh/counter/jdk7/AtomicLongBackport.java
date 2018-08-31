@@ -33,8 +33,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package moe.cnkirito.jmh.jdk7;
-import moe.cnkirito.jmh.util.UnsafeAccess;
+package moe.cnkirito.jmh.counter.jdk7;
+import moe.cnkirito.jmh.counter.util.UnsafeAccess;
 import sun.misc.Unsafe;
 
 /**

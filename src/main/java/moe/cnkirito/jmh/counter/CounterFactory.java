@@ -1,8 +1,8 @@
-package moe.cnkirito.jmh;
+package moe.cnkirito.jmh.counter;
 
-import moe.cnkirito.jmh.cliff.ConcurrentAutoTable;
-import moe.cnkirito.jmh.jdk7.AtomicLongBackport;
-import moe.cnkirito.jmh.jdk7.LongAdderBackport;
+import moe.cnkirito.jmh.counter.cliff.ConcurrentAutoTable;
+import moe.cnkirito.jmh.counter.jdk7.AtomicLongBackport;
+import moe.cnkirito.jmh.counter.jdk7.LongAdderBackport;
 import org.openjdk.jmh.annotations.CompilerControl;
 import org.openjdk.jmh.annotations.CompilerControl.Mode;
 

@@ -2,11 +2,11 @@
  * Written by Cliff Click and released to the public domain, as explained at
  * http://creativecommons.org/licenses/publicdomain
  */
-package moe.cnkirito.jmh.cliff;
+package moe.cnkirito.jmh.counter.cliff;
 import java.io.Serializable;
 import java.util.concurrent.atomic.*;
 
-import moe.cnkirito.jmh.util.UnsafeAccess;
+import moe.cnkirito.jmh.counter.util.UnsafeAccess;
 import sun.misc.Unsafe;
 
 /**

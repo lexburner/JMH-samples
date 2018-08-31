@@ -1,4 +1,4 @@
-package moe.cnkirito.jmh.util;
+package moe.cnkirito.jmh.counter.util;
 
 import sun.misc.Unsafe;
 

@@ -6,7 +6,7 @@
  * http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/jsr166e/Striped64.java?revision=1.8&view=markup
  */
 
-package moe.cnkirito.jmh.jdk7;
+package moe.cnkirito.jmh.counter.jdk7;
 
 import java.util.Random;
 
