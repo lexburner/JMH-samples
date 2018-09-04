@@ -24,8 +24,8 @@ import java.util.concurrent.TimeUnit;
  * Date 2018-08-31
  */
 @State(Scope.Thread)
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.NANOSECONDS)
+@BenchmarkMode(Mode.Throughput)
+//@OutputTimeUnit(TimeUnit.NANOSECONDS)
 @Warmup(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 3, time = 5, timeUnit = TimeUnit.SECONDS)
 public class QueueBenchmark {
@@ -43,22 +43,22 @@ public class QueueBenchmark {
     public void buildMeCounterHearty() {
         queue = QueueFactory.build(queueType, qCapacity);
     }
-//
-//    @Benchmark
-//    public int offerAndPoll() {
-//        final int fixedBurstSize = burstSize;
-//        for (int i = 0; i < fixedBurstSize; i++) {
-//            queue.offer(1);
-//        }
-//        int result = 0;
-//        for (int i = 0; i < fixedBurstSize; i++) {
-//            result = queue.poll();
-//        }
-//        return result;
-//    }
 
     @Benchmark
-    @Threads(10)
+    public int offerAndPoll() {
+        final int fixedBurstSize = burstSize;
+        for (int i = 0; i < fixedBurstSize; i++) {
+            queue.offer(1);
+        }
+        int result = 0;
+        for (int i = 0; i < fixedBurstSize; i++) {
+            result = queue.poll();
+        }
+        return result;
+    }
+
+    @Benchmark
+    @Threads(2)
     public boolean concurrentOffer() {
         return queue.offer(1);
     }
